@@ -1,0 +1,101 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */ 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c5c5c5;
+    padding: 15px 30px;
+}
+
+header h1{
+    color:#11340f;
+}
+
+
+nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 15px 30px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 18px;
+}
+
+/* Main Container using CSS Grid */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 15px 30px;
+}
+
+/* Hero Section */
+/* .hero {
+    grid-column: span 2;
+    text-align: center;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+} */
+
+/* Reservation Form using Flexbox */
+/* .reservation-form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reservation-form button {
+    background: #ffcc00;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+} */
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
