@@ -1,6 +1,38 @@
-import { FaMotorcycle } from "react-icons/fa"
+import { FaMotorcycle } from "react-icons/fa";
+import recipes from "../../recipes";
+import Swal from "sweetalert2";
 
 function Specials() {
+  const handleOrder = (id) => {
+    console.log(id);
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Do you want to confirm order?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonText: 'Yes, order it!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Orderd!',
+            'Your order has been confirmed.',
+            'success'
+          )
+        } 
+      })
+
+}
+
   return (
     <section className="specials section__padding">
       <div className="specials-header">
@@ -8,59 +40,20 @@ function Specials() {
         <button className="online-menu-button">Online Menu</button>
       </div>
       <div className="specials-container">
-        <div className="special-card">
-          <img src="Images/image-2.jpg" alt="Greek Salad" />
-          <div className="special-info">
-            <div className="special-title">
-              <h3>Greek Salad</h3>
-              <span className="price">$12.99</span>
-            </div>
-            <p>
-              The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished
-              with crunchy garlic and rosemary croutons.
-            </p>
-            <div className="delivery">
-              <span>Order a delivery</span>
-              <FaMotorcycle />
+      {recipes.map((recipe) => (
+          <div key={recipe.id} className="special-card">
+            <img src={recipe.image} alt="food-images" />
+            <div className="special-info">
+              <div className="special-title">
+                <h3>{recipe.title}</h3>
+                <span className="price">${recipe.price}</span>
+              </div>
+              <p>{recipe.description}</p>
+              <div className="delivery" onClick={() => handleOrder(recipe.id)}><span>Order a delivery</span>
+              <FaMotorcycle /></div>
             </div>
           </div>
-        </div>
-
-        <div className="special-card">
-          <img src="Images/image-3.jpeg" alt="Bruschetta" />
-          <div className="special-info">
-            <div className="special-title">
-              <h3>Bruschetta</h3>
-              <span className="price">$5.99</span>
-            </div>
-            <p>
-              Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and
-              olive oil.
-            </p>
-            <div className="delivery">
-              <span>Order a delivery</span>
-              <FaMotorcycle />
-            </div>
-          </div>
-        </div>
-
-        <div className="special-card">
-          <img src="Images/icon-5.svg" alt="Lemon Salad" />
-          <div className="special-info">
-            <div className="special-title">
-              <h3>Lemon Salad</h3>
-              <span className="price">$12.99</span>
-            </div>
-            <p>
-              This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic
-              as can be imagined.
-            </p>
-            <div className="delivery">
-              <span>Order a delivery</span>
-              <FaMotorcycle />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )
