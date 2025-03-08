@@ -19,8 +19,8 @@ function Navbar() {
         {/* Navigation Menu */}
         <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
           <li className="nav-item"><Link to="/">Home</Link></li>
-          <li className="nav-item"><Link to="#">About</Link></li>
-          <li className="nav-item"><Link to="#">Menu</Link></li>
+          <li className="nav-item"><Link to="/about">About</Link></li>
+          <li className="nav-item"><Link to="/specials">Menu</Link></li>
           <li className="nav-item"><Link to="/booking">Reservations</Link></li>
           <li className="nav-item"><Link to="#">Order Online</Link></li>
           <li className="nav-item"><Link to="#">Login</Link></li>
