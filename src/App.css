@@ -42,7 +42,7 @@
  /* Navbar CSS Start  */
 
  .section__padding {
-    padding: 2rem 18rem;
+    padding: 2rem 15rem;
 }
 
  .navbar {
@@ -51,7 +51,7 @@
   }
   
   .navbar-container {
-    max-width: 800px;
+    max-width: 885px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -608,7 +608,7 @@
     font-weight: 500;
     line-height: 125%;
     font-family: "Karla", sans-serif;
-    padding-right: 12rem;
+    padding-right: 8rem;
   }
   
   .about-images {
@@ -629,7 +629,7 @@
   .chef-image {
     width: 90%;
     /* height: 70%; */
-    bottom: -26px;
+    bottom: 0;
     right: 0;
     z-index: 2;
   }
@@ -699,7 +699,7 @@
     flex-direction: column;
     align-items: center;
     max-height: 321px;
-    max-width: 183px;
+    max-width: 170px;
   }
   
   .footer-logo img {
