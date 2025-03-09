@@ -944,3 +944,10 @@
         font-family: "Karla", sans-serif;
         font-size: 18px;
         margin: 0 auto !important;}
+
+        .error-msg {
+          color: red;
+          font-size: 12px;
+          margin-top: 4px;
+        }
+        
